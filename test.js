@@ -1,16 +1,14 @@
+/*jshint strict:true node:true es5:true onevar:true laxcomma:true laxbreak:true eqeqeq:true immed:true latedef:true*/
 (function () {
   "use strict";
 
-  var atob = require('.');
-  var encoded = "SGVsbG8sIFdvcmxkIQ=="
-  var unencoded = "Hello, World!";
-  /*
+  var btoa = require('./index')
     , encoded = "SGVsbG8sIBZM"
     , unencoded = "Hello, 世界"
-  */
+    ;
 
-  if (unencoded !== atob(encoded)) {
-    console.log('[FAIL]', unencoded, atob(encoded));
+  if (encoded !== btoa(unencoded)) {
+    console.error('[FAIL]', encoded, btoa(unencoded));
     return;
   }
 
