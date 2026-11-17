@@ -16,4 +16,4 @@ function _interopRequireWildcard(e, t) {
   for (c in e) "default" !== c && {}.hasOwnProperty.call(e, c) && ((r = a && Object.getOwnPropertyDescriptor(e, c)) && (r.get || r.set) ? a(n, c, r) : n[c] = e[c]);
   return n;
 }
-export { _interopRequireWildcard as default };
+module.exports = _interopRequireWildcard, module.exports.__esModule = true, module.exports["default"] = module.exports;
