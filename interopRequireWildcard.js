@@ -1,42 +1,19 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = _interopRequireWildcard;
 var cache;
-function _interopRequireWildcard(obj, nodeInterop) {
-  if (!nodeInterop && obj && obj.__esModule) {
-    return obj;
+function _interopRequireWildcard(e, t) {
+  if (!t && e && e.__esModule) return e;
+  var r,
+    c,
+    a = Object.defineProperty,
+    n = {
+      __proto__: null,
+      "default": e
+    };
+  if (Object(e) !== e) return n;
+  if (cache || "function" != typeof WeakMap || (cache = new WeakMap()), cache) {
+    if (cache.has(e)) return cache.get(e);
+    cache.set(e, n);
   }
-  var defineProp = Object.defineProperty;
-  var newObj = {
-    __proto__: null,
-    default: obj
-  };
-  var desc;
-  var key;
-  if (Object(obj) !== obj) {
-    return newObj;
-  }
-  if (!cache && typeof WeakMap === "function") {
-    cache = new WeakMap();
-  }
-  if (cache) {
-    if (cache.has(obj)) return cache.get(obj);
-    cache.set(obj, newObj);
-  }
-  for (key in obj) {
-    if (key !== "default" && {}.hasOwnProperty.call(obj, key)) {
-      desc = defineProp && Object.getOwnPropertyDescriptor(obj, key);
-      if (desc && (desc.get || desc.set)) {
-        defineProp(newObj, key, desc);
-      } else {
-        newObj[key] = obj[key];
-      }
-    }
-  }
-  return newObj;
+  for (c in e) "default" !== c && {}.hasOwnProperty.call(e, c) && ((r = a && Object.getOwnPropertyDescriptor(e, c)) && (r.get || r.set) ? a(n, c, r) : n[c] = e[c]);
+  return n;
 }
-
-//# sourceMappingURL=interopRequireWildcard.js.map
+export { _interopRequireWildcard as default };
