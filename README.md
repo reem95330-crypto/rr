@@ -1,49 +1,56 @@
-atob
-===
+# Autoprefixer
 
-| **atob**
-| [btoa](https://git.coolaj86.com/coolaj86/btoa.js)
-| [unibabel.js](https://git.coolaj86.com/coolaj86/unibabel.js)
-| Sponsored by [ppl](https://ppl.family)
+<img align="right" width="94" height="71"
+     src="https://postcss.github.io/autoprefixer/logo.svg"
+     title="Autoprefixer logo by Anton Lovchikov">
 
-Uses `Buffer` to emulate the exact functionality of the browser's atob.
+[PostCSS] plugin to parse CSS and add vendor prefixes to CSS rules using values
+from [Can I Use]. It is recommended by Google and used in Twitter and Alibaba.
 
-Note: Unicode may be handled incorrectly (like the browser).
+Write your CSS rules without vendor prefixes (in fact, forget about them
+entirely):
 
-It turns base64-encoded <strong>a</strong>scii data back **to** <strong>b</strong>inary.
+```css
+::placeholder {
+  color: gray;
+}
 
-```javascript
-(function () {
-  "use strict";
-
-  var atob = require('atob');
-  var b64 = "SGVsbG8sIFdvcmxkIQ==";
-  var bin = atob(b64);
-
-  console.log(bin); // "Hello, World!"
-}());
+.image {
+  width: stretch;
+}
 ```
 
-### Need Unicode and Binary Support in the Browser?
+Autoprefixer will use the data based on current browser popularity and property
+support to apply prefixes for you. You can try the [interactive demo]
+of Autoprefixer.
 
-Check out [unibabel.js](https://git.coolaj86.com/coolaj86/unibabel.js)
+```css
+::-moz-placeholder {
+  color: gray;
+}
+::placeholder {
+  color: gray;
+}
 
-Changelog
-=======
+.image {
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: stretch;
+}
+```
 
-  * v2.1.0 address a few issues and PRs, update URLs
-  * v2.0.0 provide browser version for ios web workers
-  * v1.2.0 provide (empty) browser version
-  * v1.1.3 add MIT license
-  * v1.1.2 node only
+Twitter account for news and releases: [@autoprefixer].
 
-LICENSE
-=======
+---
 
-Code copyright 2012-2018 AJ ONeal
+<img src="https://cdn.evilmartians.com/badges/logo-no-label.svg" alt="" width="22" height="16" />  Autoprefixer is built by <b><a href="https://evilmartians.com/">Evil Martians</a></b>, an American design and engineering consultancy for <b>developer tools, AI, and cybersecurity startups</b>.
 
-Dual-licensed MIT and Apache-2.0
+---
 
-Docs copyright 2012-2018 AJ ONeal
+[interactive demo]: https://autoprefixer.github.io/
+[@autoprefixer]: https://twitter.com/autoprefixer
+[Can I Use]: https://caniuse.com/
+[PostCSS]: https://github.com/postcss/postcss
 
-Docs released under [Creative Commons](https://git.coolaj86.com/coolaj86/atob.js/blob/master/LICENSE.DOCS).
+## Docs
+Read full docs **[here](https://github.com/postcss/autoprefixer#readme)**.
